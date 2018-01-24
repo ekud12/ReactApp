@@ -46,7 +46,7 @@ class TextInputWoW extends Component {
     return (
       <View style={{padding: 10}}>
         <TextInput
-          style={{height: 40,width:130}}
+          style={{height: 40,width:130, borderColor:'white', borderWidth:1}}
           placeholder="Type here to translate!"
           onChangeText={(text) => this.setState({text})}
         />
