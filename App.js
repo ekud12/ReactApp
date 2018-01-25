@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import { AppRegistry, Text, StyleSheet, View ,Button, Alert,Vibration,TextInput} from 'react-native';
 import { TextInputWoW } from './TextInputWOW';
+import SocketIOClient from 'socket.io-client';
 
 export default class lotsOfTexts extends Component{
+  constructor(props){
+    super(props);
+    this.socket = SocketIOClient('http://yay-server.herokuapp.com');
+    this.socket.emit('chat message', 'Hello world!');
+  }
   render(){
     return(
       <View style={{
