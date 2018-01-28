@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { Text, 
          View,
          TextInput,
-         StyleSheet, 
          Image,
          Button,
          Alert,
          TouchableOpacity} from 'react-native';
 import Sound from 'react-native-sound';
+import { styles } from './styles';
+
 
 class SoundBox extends Component{
     constructor(props){
@@ -29,6 +30,7 @@ class SoundBox extends Component{
     render() {
         return (
           <View style={styles.container}>
+          <Text>{this.props.titler}</Text>
             <TouchableOpacity activeOpacity={0.1} onPress={this.playButtonTapped}>
                 <Image
                     style={{    
@@ -46,7 +48,7 @@ class SoundBox extends Component{
 
     getImageFilePath() {
         const _picName = this.state.fileNameImage;
-        return require('../Assets/Images/Rain.jpg'); 
+        return require('../../Assets/Images/Rain.jpg'); 
         // if(this.state.fileNameImage == "Rain.jpg")
         //      return require('../Assets/Images/'+rain); 
         // if(this.state.fileNameImage == "Thunder.jpg")
@@ -113,14 +115,4 @@ class SoundBox extends Component{
         this.state.sound.stop()
     }
 }
-
 export default SoundBox;
-
-const styles = StyleSheet.create({
-    container: {
-            flex: 1,
-            backgroundColor: 'white',
-            alignItems: 'center',
-            justifyContent: 'center',
-    },
-});
