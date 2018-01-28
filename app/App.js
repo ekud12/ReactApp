@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { AppRegistry, Text, StyleSheet, View ,Button, Alert,Vibration,TextInput,FlatList,ListItem, Keyboard} from 'react-native';
 import { TextInputWoW } from './TextInputWOW';
 import SocketIOClient from 'socket.io-client';
+import SoundBox from './Components/SoundBox';
 export default class lotsOfTexts extends Component{
   constructor(props){
     super(props);
@@ -49,6 +50,10 @@ export default class lotsOfTexts extends Component{
                 keyExtractor={(item, index) => index}
                 extraData={this.state}
           />
+            </View>
+              <View style={{flex:1,justifyContent: 'center', alignItems:'center',flexDirection:'row'}}>
+            <SoundBox fileName="rain.mp3" fileNameImage="Rain.jpg"/>
+            <SoundBox fileName="thunder.mp3" fileNameImage="Thunder.jpg"/>
             </View>
       </View>
     );
