@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { Text, 
          View,
          TextInput,
-         Image,
          Button,
          Alert,
          TouchableOpacity} from 'react-native';
 import Sound from 'react-native-sound';
 import { styles } from './styles';
+import FastImage from 'react-native-fast-image'
 
 
 class SoundBox extends Component{
@@ -32,14 +32,15 @@ class SoundBox extends Component{
           <View style={styles.container}>
           <Text>{this.props.titler}</Text>
             <TouchableOpacity activeOpacity={0.1} onPress={this.playButtonTapped}>
-                <Image
+                <FastImage
                     style={{    
                         flex: 1,
-                        
+                       width: 500  , height: 500
                     }}
-                    resizeMode= 'contain'
+                    resizeMode={FastImage.resizeMode.contain}
                     opacity= {this.state.imageOpacity}
-                    source={this.getImageFilePath()}
+                    source={{uri: 'http://yay-server.herokuapp.com/testPic/5', priority: FastImage.priority.normal}}
+                    //source={this.getImageFilePath()}
                 />
             </TouchableOpacity>
           </View>

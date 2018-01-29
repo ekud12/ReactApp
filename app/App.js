@@ -18,8 +18,8 @@ import { getAllImages,incrementOne } from '../app/actions';
       this.setState({ listOfMessage: oldMsg, lastMessage: this.lastMessage})
     })
     this.updateAllpics();
-}
-
+  }
+  
   sendMessage = (newMsg) => { 
       this.socket.emit('chat message', newMsg);
   }

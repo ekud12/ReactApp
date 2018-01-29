@@ -1,4 +1,4 @@
-import {Api} from '../config/settings';
+import {Api, _Api} from '../config/settings';
 
 const initialState = {
     files: ['12kjhjhkhklh'],
@@ -15,7 +15,6 @@ export default (state = initialState, action) => {
         }
         case "ADD_ONE":
         {
-            fetch()
             return {...state, count: state.count+1};
         }
         default:
